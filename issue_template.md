@@ -1,9 +1,14 @@
 
 Hi, I want to use the offline_backpack_3d example to generate a 3D map from a bag file.
+
 Because our robot is not built on ROS, I converted the data from time stamped pcd files and IMU outputs to a Rosbag file using the Rosbag API.
+
 I tried LOAM before and the data could be displayed on RVIZ correctly.
-Our robot has a single VLP16 Lidar and a IMU on board.
+
+Our robot has a single VLP16 Lidar and a IMU on board. I only have acceleration and angular velocity availiable so I set the first term of the orientation covariance to -1 and 0s to all acceleration and angular velocity covariances.
+
 I have edited the configuration files accordingly but nothing is showing up in RVIZ and local_trajectory_builder.cc throws warnings about empty range data and the trajectory seems to finish once it is generated.
+
 Could you please take a look and help to point out where I might have missed? All relevant files can be found in the repo, if you need any additional info please let me know. Thanks!
 
 
